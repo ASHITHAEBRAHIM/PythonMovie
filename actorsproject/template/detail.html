@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>detail</title>
+</head>
+<body>
+{% extends 'base.html' %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{Actors_list.Image.url}}" width="300" height="300">
+        </div>
+        <div class="col-md-6">
+            <h2>{{Actors_list.Name}}({{Actors_list.Age}})</h2>
+            <h4>{{Actors_list.Desc}}</h4>
+            <a class="btn btn-warning" href="{% url 'actorsapp:update' Actors_list.id %}">Update</a>
+            <a class="btn btn-danger" href="{% url 'actorsapp:delete' Actors_list.id %}">Delete</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+</body>
+</html>
